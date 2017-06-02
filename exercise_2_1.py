@@ -11,7 +11,7 @@ if __name__ == "__main__":
     print mol.coulomb_matrix
 
     # Generate and print a bag of bonds representation
-    mol.generate_bob(size=5, bags={"C":2, "H":5})
+    mol.generate_bob(size=5, asize={"C":2, "H":5})
     print mol.bob
 
 

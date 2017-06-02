@@ -15,7 +15,7 @@ if __name__ == "__main__":
         mol.generate_coulomb_matrix(size=23, sorting="row-norm")
 
         # Or generate 
-        # mol.generate_bob(size=23, bags={"O":3, "C":7, "N":3, "H":16, "S":1})
+        # mol.generate_bob(size=23, asize={"O":3, "C":7, "N":3, "H":16, "S":1})
 
     # Make a big 2D array with all the 
     X = np.array([mol.coulomb_matrix for mol in compounds])

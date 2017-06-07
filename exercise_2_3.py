@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from __future__ import print_function
 import numpy as np
 
 import qml
@@ -18,7 +19,7 @@ if __name__ == "__main__":
     # Make a big 2D array with all the 
     X = np.array([mol.coulomb_matrix for mol in compounds])
 
-    print energy_pbe0
+    print(energy_pbe0)
 
     # Assign 1000 first molecules to the training set
     X_training = X[:1000]
@@ -27,7 +28,7 @@ if __name__ == "__main__":
    
     sigma = 700.0
     K = gaussian_kernel(X_training, X_training, sigma)
-    print K
+    print(K)
 
     # Add a small lambda to the diagonal of the kernel matrix
     K[np.diag_indices_from(K)] += 1e-8
@@ -35,4 +36,4 @@ if __name__ == "__main__":
     # Use the built-in Cholesky-decomposition to solve
     alpha = cho_solve(K, Y_training) 
 
-    print alpha
+    print(alpha)

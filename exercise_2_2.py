@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from __future__ import print_function
 import numpy as np
 
 import qml
@@ -22,15 +23,17 @@ if __name__ == "__main__":
     # X = np.array([mol.bob for mol in compounds])
 
     # Print all the representations
-    print X
+    print(X)
 
-   
+    # Run on only a subset (for speed)
+    X = X[:100]
+
     # Calculate and print a Gaussian kernel for QM7
     sigma = 800.0
     K1 = gaussian_kernel(X, X, sigma)
-    print K1
+    print(K1)
 
     # Calculate and print a Lapacian kernel for QM7
     sigma = 4000.0
     K2 = laplacian_kernel(X, X, sigma)
-    print K2
+    print(K2)

@@ -48,13 +48,15 @@ if __name__ == "__main__":
 
     print(alpha)
 
+    # Assign 1000 last molecules to the test set
+    X_test = X[-1000:]
+    Y_test = energy_pbe0[-1000:]
+
     # calculate a kernel matrix between test and training data, using the same sigma
     Ks = gaussian_kernel(X_test, X_training, sigma)
 
     # Make the predictions
     Y_predicted = np.dot(Ks, alpha)
 
-    # Calculate MAE
+    # Calculate mean-absolute-error (MAE):
     print(np.mean(np.abs(Y_predicted - Y_test)))
-
-

@@ -22,7 +22,7 @@ if __name__ == "__main__":
         # mol.generate_bob(size=23, asize={"O":3, "C":7, "N":3, "H":16, "S":1})
 
     # Make a big 2D array with all the representations
-    X = np.array([mol.coulomb_matrix for mol in compounds])
+    X = np.array([mol.representation for mol in compounds])
     # X = np.array([mol.bob for mol in compounds])
 
     # Print all representations

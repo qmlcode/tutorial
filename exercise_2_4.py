@@ -20,7 +20,7 @@ if __name__ == "__main__":
             
 
     # Make a big 2D array with all the 
-    X = np.array([mol.coulomb_matrix for mol in compounds])
+    X = np.array([mol.representation for mol in compounds])
     # X = np.array([mol.bob for mol in compounds])
 
     print(energy_pbe0)

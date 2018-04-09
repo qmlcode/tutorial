@@ -10,11 +10,11 @@ if __name__ == "__main__":
 
     # Generate and print a coulomb matrix for compound with 5 atoms 
     mol.generate_coulomb_matrix(size=5, sorting="row-norm")
-    print(mol.coulomb_matrix)
+    print(mol.representation)
 
     # Generate and print BoB bags for compound containing C and H
     mol.generate_bob(size=5, asize={"C":2, "H":5})
-    print(mol.bob)
+    print(mol.representation)
 
     # Print other properties stored in the object
     print(mol.coordinates)
